@@ -6,13 +6,10 @@ def solution(clothes):
         name = clothes[i][1]
         data[name] = data.get(name, 0) + 1
 
-    if len(data.keys()) == 1:
-        answer = len(clothes)
-    else:
-        answer = 1
-        for k,v in data.items():
-            answer *= (v+1) # 해당을 의상을 안입은 경우도 포함
-            
-        answer-= 1
+    answer = 1
+    for k,v in data.items():
+        answer *= (v+1) # 해당을 의상을 안입은 경우도 포함
+
+    answer-= 1
         
     return answer
