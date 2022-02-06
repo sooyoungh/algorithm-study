@@ -13,7 +13,7 @@ def binary_search(arr, target, start, end):
 
 # 이진탐색 - 반복문
 def binary_search(arr, target, start, end):
-  while start > end:
+  while start <= end:
     mid = (start + end)//2
     if arr[mid] == target:
       return mid
