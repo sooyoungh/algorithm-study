@@ -4,12 +4,17 @@ data = []
 for i in range(n):
   data.append(list(map(int, input().split())))
 
-# 깊은 복사 -> 원래 배열도 값이 변경
+# 깊은 복사
 # import copy
 # arr = copy.deepcopy(data)
 
-# 얕은 복사
-# arr = data[:] 혹은 arr = data
+# 얕은 복사 -> 원래 배열도 값이 변경
+# arr = data
+
+# [:]은 1차원에서는 깊은 복사, 2차원에서는 얕은 복사
+# arr = data[:]
+# 2차원에서 얕은 복사 원하면
+# arr = [item[:] for item in data]
 
 arr = [[0 for j in range(i+1)] for i in range(n)]
 arr[0][0] = data[0][0]
