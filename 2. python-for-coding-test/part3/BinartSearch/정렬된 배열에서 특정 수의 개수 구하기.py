@@ -4,13 +4,13 @@ data = list(map(int, input().split()))
 def find_first(data, x):
   start = 0
   end = len(data)-1
-  while start < end:
+  while start <= end:
     mid = (start + end)//2
     if data[mid] == x :
       if data[mid - 1] < x:
         return mid
       else:
-        end = mid
+        end = mid - 1
     elif data[mid] > x :
       end = mid - 1
     else:#
@@ -20,13 +20,13 @@ def find_first(data, x):
 def find_last(data, x):
   start = 0
   end = len(data)-1
-  while start < end:
+  while start <= end:
     mid = (start + end)//2
     if data[mid] == x :
       if data[mid + 1] > x:
         return mid
       else:
-        start = mid
+        start = mid + 1
     elif data[mid] > x :
       end = mid - 1
     else:
