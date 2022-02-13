@@ -13,7 +13,7 @@ for i in range(n):
 
 # [:]은 1차원에서는 깊은 복사, 2차원에서는 얕은 복사
 # arr = data[:]
-# 2차원에서 얕은 복사 원하면
+# 2차원에서 깊은 복사 원하면
 # arr = [item[:] for item in data]
 
 arr = [[0 for j in range(i+1)] for i in range(n)]
