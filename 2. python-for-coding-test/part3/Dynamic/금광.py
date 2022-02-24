@@ -14,18 +14,16 @@ for i in range(1, m):
   for j in range(n):
     target = graph[j][i]
     if j-1 <0:
-      sec = graph[j][i-1] + target
-      thr = graph[j+1][i-1] + target
-      graph[j][i] = max(sec,thr)
-    elif j+1 > n-1:
-      fir = graph[j-1][i-1] + target
-      sec = graph[j][i-1] + target
-      graph[j][i] = max(fir,sec)
+      fir = 0
     else:
       fir = graph[j-1][i-1] + target
-      sec = graph[j][i-1] + target
+      
+    if j+1 > n-1:
+      thr = 0
+    else:
       thr = graph[j+1][i-1] + target
-      graph[j][i] = max(fir,sec,thr)
+    sec = graph[j][i-1] + target
+    graph[j][i] = max(fir,sec,thr)
 
 print(graph)
 arr = []
