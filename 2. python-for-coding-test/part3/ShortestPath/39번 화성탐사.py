@@ -55,8 +55,8 @@ dy = [-1,1,0,0]
 
 while q:
   recent_dist, x,y = heapq.heappop(q)
-  #if distance[x][y] < recent_dist: => 없어도 ..??
-  #  continue
+  if distance[x][y] < recent_dist:
+    continue
   for i in range(4):
     nx = x+ dx[i]
     ny = y+ dy[i]
