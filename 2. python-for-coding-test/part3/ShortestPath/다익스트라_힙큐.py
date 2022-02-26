@@ -21,12 +21,15 @@ def dijkstra(start):
   while q:
     dist, now = heapq.heappop(q)
 
-    if distance[now] < dist:
+     # 힙큐는 짧은 거리순으로 오름차순 => 큐에 쌓여있지만 미리 처리된 애들은 패스해야함! (BFS)
+     # distance : 매번 갱신될떄마다 distance에 저장됨 -> distance에는 최단이 최종 저장되어있음
+     # heapq : 큐에는 예전에 갱신했을떄도 다 저장되어있음(후순위로) -> 큐의 뒷부분부터는 distance보다 길게 저장되어있을 수 있음 -> 그냥 패스
+    if distance[now] < dist: 
       continue
       
     for i in graph[now]:
       cost = dist + i[1]
-      if cost < distance[now]:
+      if cost < distance[i[0]]:
         distance[i[0]] = cost
         # 짧은 거리 해당되면 힙큐에 넣기 -> 얘를 통해서 또 최단거리가 나오는 지 체크용
         heapq.heappush(q, (cost, i[0]))
