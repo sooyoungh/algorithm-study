@@ -23,13 +23,13 @@ def spread(graph, x,y):
     graph[x][y+1] = target
 
 for _ in range(s):
+  # 현재 정보 큐에 넣기
   for i in range(n):
     for j in range(n):
       heapq.heappush(q,(graph[i][j], i,j) )
-
-while q:
-  target, i, j = heapq.heappop(q)
-  spread(graph, i, j)
+  while q:
+    target, i, j = heapq.heappop(q)
+    spread(graph, i, j)
 
 print(graph[x-1][y-1])
 print(graph)
