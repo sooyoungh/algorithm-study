@@ -1,3 +1,6 @@
+# 스택을 접근하는 거랑 pop하는 거랑 다른 점을 이용
+# 주의: 큐에서 빼낼때는 len(q) > 0 이어야 함!
+
 from collections import deque
 def solution(bridge_length, weight, truck_weights):
     answer = 0
@@ -6,10 +9,12 @@ def solution(bridge_length, weight, truck_weights):
     
     while len(truck_weights) > 0:
         answer += 1
+        # 스택 값 접근
         cost = truck_weights[0]
         sum += cost
         
         if len(q) < bridge_length and sum <= weight:
+            # 스택값 pop
             now = truck_weights.pop(0)
             q.append([now,0])
             print(q)
