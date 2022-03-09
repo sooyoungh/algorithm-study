@@ -28,7 +28,6 @@ def dfs(i, now):
       dfs(i+1, int(now/data[i])
       div += 1
           
-          
-          
-          
-(파이썬 음수 나누기).[https://yunmorning.tistory.com/35]
+dfs(1, data[0])          
+
+[파이썬 음수 나누기].(https://yunmorning.tistory.com/35)
