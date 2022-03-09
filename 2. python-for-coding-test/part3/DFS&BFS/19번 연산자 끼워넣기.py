@@ -31,3 +31,7 @@ def dfs(i, now):
 dfs(1, data[0])          
 
 [파이썬 음수 나누기].(https://yunmorning.tistory.com/35)
+
+(-5) / 4 = -1.25
+(-5) // 4 = floor (-1.25) = -2
+(-5) % 4 = (-2 × 4 + 3) % 4 = 3
