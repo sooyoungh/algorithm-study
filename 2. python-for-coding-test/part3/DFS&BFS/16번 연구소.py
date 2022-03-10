@@ -1,3 +1,61 @@
+# 벽 3개 세울때 조합 사용, 2차원 배열 복사
+import sys
+import copy
+from itertools import combinations
+input = sys.stdin.readline
+n,m = map(int, input().split())
+data = []
+
+for _ in range(n):
+  data.append(list(map(int, input().split())))
+
+dx = [0,0,-1,1]
+dy = [-1,1,0,0]
+
+result = 0
+empty = []
+for i in range(n):
+  for j in range(m):
+    if data[i][j] == 0:
+      empty.append((i,j))
+
+def dfs_spread (x,y, tmp):
+  for i in range(4):
+    nx = x + dx[i]
+    ny = y + dy[i]
+    if 0 <= nx < n and 0 <= ny < m:
+      if tmp[nx][ny] == 0:
+        tmp[nx][ny] = 2
+        dfs_spread(nx,ny, tmp)
+
+def get_score(tmp):
+  score = 0
+  for i in range(n):
+    for j in range(m):
+      if tmp[i][j] == 0:
+        score += 1
+  return score
+
+def dfs_start(tmp):
+  global result
+  for i in range(n):
+    for j in range(m):
+      if tmp[i][j] == 2:
+        dfs_spread(i,j, tmp)
+  result = max(result, get_score(tmp))
+  return
+
+for case in combinations(empty, 3):
+  tmp = copy.deepcopy(data)
+  for i in case:
+    tmp[i[0]][i[1]] = 1
+  dfs_start(tmp)
+
+print(result)
+
+
+
+# 이코테- 시간초과
 n,m = map(int, inp7ut().split())
 data = []
 temp = [[0]*m  for i in range(n)]
