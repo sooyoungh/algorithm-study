@@ -34,15 +34,17 @@ def process(x,y,index):
   return cnt
 
 result = 0
-while True:
+while True: # 날마다 루프 돌리기
   union = [[-1] *n for i in range(n)]
   index = 0
+  # 날마다 모든 나라 탐색하기
   for i in range(n):
     for j in range(n):
       if union[i][j] == -1:
         process(i,j, index)
         index += 1
         
+  # 마지막 날은 인구 이동 할 필요 없는 나라들이 n*n가지 => 이러면 while문 종료!
   if index == n*n:
     break
   result += 1
