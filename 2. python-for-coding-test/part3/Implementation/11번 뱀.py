@@ -1,74 +1,58 @@
-from collections import deque
-import copy
+# 1. 교재 - stack 사용, FIFO
 n = int(input())
-graph = [[0]*(n+1) for i in range(n+1)]
-apple = int(input())
-for i in range(apple):
-  x,y = map(int, input().split())
-  graph[x][y] = 2
+k = int(input())
+data = [[0] * (n+1) for _ in range(n+1)]
+info = []
 
-direct = int(input())
-direct_list = deque([])
+for _ in range(k):
+  a,b = map(int, input().split())
+  data[a][b] = 1
 
-for i in range(direct):
-  sec, d = input().split()
-  direct_list.append((int(sec), d))
+l = int(input())
+for _ in range(l):
+  x, c = input().split()
+  info.append((int(x),c))
 
 dx = [0,1,0,-1]
 dy = [1,0,-1,0]
 
-cnt = 0
-graph[1][1] = 1
-x,y = 1,1
-direct_num = 0
-sec, d = direct_list.popleft()
+def turn(direction, c):
+  if c == "L":
+    direction = (direction - 1) % 4
+  else:
+    direction = (direction + 1) % 4
+  return direction
 
-snake = []
-snake.append((x,y))
+def simulate():
+  x,y = 1,1
+  data[x][y] = 2
+  direction = 0
+  time = 0
+  index = 0
+  # 꼬리가 앞 쪽
+  snake = [(x,y)]
+  while True:
+    nx = x + dx[direction]
+    ny = y + dy[direction]
+    # 접근할 수 있는 곳이면
+    if 1 <= nx <= n and 1 <= ny <= n and data[nx][ny] != 2 :
+      if data[nx][ny] == 0:
+        data[nx][ny] = 2
+        snake.append((nx,ny))
+        px, py = snake.pop(0)
+        data[px][py] = 0
+      if data[nx][ny] == 1 :
+        data[nx][ny] = 2
+        snake.append((nx,ny))
+    # 접근 불가
+    else:
+      time += 1
+      break
+    x,y = nx, ny
+    time += 1
+    if index < l and time == info[index][0]:
+      direction = turn(direction, info[index][1])
+      index += 1
+  return time
 
-def restart(snake, x,y):
-  arr = []
-  arr.append((x,y))
-  for i in range(len(snake)):
-    arr.append(snake[i])
-  return arr
-
-while True:
-  if cnt == sec:
-    if d =='L':
-      direct_num  = (direct_num-1) % 4
-    elif d =='D':
-      direct_num  = (direct_num+1) % 4
-    if len(direct_list) > 0:
-      sec, d = direct_list.popleft()
-    
-  nx= x + dx[direct_num]
-  ny= y + dy[direct_num]
-
-  if nx <= 0 or nx > n or ny <= 0 or ny > n:
-    cnt += 1
-    print(1)
-    
-    break
-  new = graph[nx][ny]
-  if new == 1:
-    cnt += 1
-    print(nx,ny)
-    break
-  elif new == 2:
-    graph[nx][ny] = 1
-    snake = copy.deepcopy(restart(snake, nx,ny))
-    
-  elif new == 0:
-    graph[nx][ny] = 1
-    tail_x,tail_y = snake.pop()
-    graph[tail_x][tail_y] = 0
-    # 새 노드 넣어주기
-    snake = copy.deepcopy(restart(snake, nx,ny))
-    
-  x,y = nx, ny
-  cnt += 1
-  print(x,y, cnt)
-  print('snake : ', snake)
-
-print(cnt)
+print(simulate())
