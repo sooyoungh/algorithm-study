@@ -13,10 +13,13 @@ def solution(number, k):
         new_stack.append(num)
         
     # 더 빼야되는데 남은 수들은 다 작을 경우, 그냥 붙여야함!
-    if k> 0:
-        new_stack.pop()
-        k-=1
-        
+    #if k> 0:
+    #    new_stack.pop()
+    #    k-=1
+    
+    # 위 3줄을 아래로 줄일수있음! 뒤에서부터 k번 빼기
+    stack = stack[:-k]
+    
     answer = "".join(new_stack)
         
     return str(answer)
