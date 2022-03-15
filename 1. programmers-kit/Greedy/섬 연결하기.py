@@ -1,4 +1,4 @@
-# 1. 이코테 교재 풀이 활용
+# 1. 크루스칼 - 부모테이블 (이코테 교재 풀이 활용)
 def find_parent(parent, x):
     if parent[x] != x:
         parent[x] = find_parent(parent, parent[x])
