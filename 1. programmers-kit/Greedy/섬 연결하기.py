@@ -13,9 +13,11 @@ def union_parent(parent, a,b):
 
 def solution(n, costs):
     answer = 0
-    parent = [0] *(n+1)
-    for i in range(1, n+1):
-        parent[i] = i
+    #parent = [0] *(n+1)
+    #for i in range(1, n+1):
+    #    parent[i] = i
+    
+    parent = [i for i in range(n+1)] # 여기서는 노드가 0부터라서 n까지 해도 됨!
     
     costs.sort(key = lambda x : x[2])
     
