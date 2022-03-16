@@ -42,8 +42,8 @@ def bfs(tmp):
  
 answer = 0
 for data in combinations(blank, 3):
-  tmp = copy.deepcopy(graph)
-  for x, y in data:
+  tmp = copy.deepcopy(graph)  # 복사해야될 경우에는 
+  for x, y in data:           # ** = 1로 바꾸기만 하면 됨, 나머지 ** = 0으로 다시 바꿀 필요없으니까
     tmp[x][y] = 1
   answer = max(answer, bfs(tmp))
  
