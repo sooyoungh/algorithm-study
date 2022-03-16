@@ -19,7 +19,36 @@ for i in range(N):
  
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
+
+# 2-1)
+def bfs(tmp):
+  q = deque(virus)
+  while q:
+    x, y = q.popleft()
+    for i in range(4):
+      nx = x + dx[i]
+      ny = y + dy[i]
+      if 0 <= nx < N and 0 <= ny < M:
+          if tmp[nx][ny] == 0:
+            tmp[nx][ny] = 2
+            q.append((nx, ny))
  
+  count = 0
+  for i in range(N):
+    for j in range(M):
+      if tmp[i][j] == 0:
+        count += 1
+  return count
+ 
+answer = 0
+for data in combinations(blank, 3):
+  tmp = copy.deepcopy(graph)
+  for x, y in data:
+    tmp[x][y] = 1
+  answer = max(answer, bfs(tmp))
+ 
+ 
+ # 2-2)
 def bfs():
   testgraph = copy.deepcopy(graph)
   q = deque(virus)
@@ -40,7 +69,6 @@ def bfs():
         count += 1
   
   return count
- 
  
 answer = 0
 for data in combinations(blank, 3):
