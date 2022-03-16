@@ -59,7 +59,8 @@ print(result)
 for case in combinations(empty, 3):
   for x,y in case:
     data[x][y] = 1
-  dfs_start(data)
+  dfs_start(data)  ==> 여기서 원본 데이터도 변경(바이러스)되니까, 이 문제에서는 원본을 따로 복사하여 탐색해야함
+                        반면 20번 감시 피하기 문제에서는 process()에서 원본을 바꾸지 않으니까 가능함
   for x,y in case:
     data[x][y] = 0
   
