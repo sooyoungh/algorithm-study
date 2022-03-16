@@ -1,4 +1,5 @@
 # 벽 3개 세울때 조합 사용, 2차원 배열 복사
+# **DFS + 조합으로 풀이했으나, BFS가 시간이 빠름
 import sys
 import copy
 from itertools import combinations
@@ -50,12 +51,24 @@ for case in combinations(empty, 3):
   for i in case:
     tmp[i[0]][i[1]] = 1
   dfs_start(tmp)
-
+  
 print(result)
 
+# 원본 데이터를 바꾸면 오류 발생함 (중간에 바뀌어서,,) => deepcopy 사용해야함
+# 아래는 틀린 풀이! 원본을 따로 복사 해줘야함
+for case in combinations(empty, 3):
+  for x,y in case:
+    data[x][y] = 1
+  dfs_start(data)
+  for x,y in case:
+    data[x][y] = 0
+  
+  
 
 
-# 이코테- 시간초과
+
+
+# 이코테- 시간초과 (DFS 2번 사용)
 n,m = map(int, inp7ut().split())
 data = []
 temp = [[0]*m  for i in range(n)]
