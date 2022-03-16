@@ -37,6 +37,7 @@ def get_score(tmp):
         score += 1
   return score
 
+# 시작 부분 함수로 나눠서 
 def dfs_start(tmp):
   global result
   for i in range(n):
@@ -53,7 +54,20 @@ for case in combinations(empty, 3):
   dfs_start(tmp)
   
 print(result)
+  
+# 시작 부분 한번에
+for case in combinations(empty, 3):
+  tmp = copy.deepcopy(data)
+  for i in case:
+    tmp[i[0]][i[1]] = 1
+  for i in range(n):
+    for j in range(m):
+      if tmp[i][j] == 2:
+        dfs_spread(i,j, tmp)
+  result = max(result, get_score(tmp))
+  
 
+# 틀린 풀이 (시작단계)
 # 원본 데이터를 바꾸면 오류 발생함 (중간에 바뀌어서,,) => deepcopy 사용해야함
 # 아래는 틀린 풀이! 원본을 따로 복사 해줘야함
 for case in combinations(empty, 3):
@@ -63,7 +77,6 @@ for case in combinations(empty, 3):
                         반면 20번 감시 피하기 문제에서는 process()에서 원본을 바꾸지 않으니까 가능함
   for x,y in case:
     data[x][y] = 0
-  
   
 
 
