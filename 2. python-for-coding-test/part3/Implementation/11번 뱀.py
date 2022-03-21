@@ -1,4 +1,5 @@
 # 1. 교재 - stack 사용, FIFO
+# 자료 구조 : snake(뱀정보-배열/큐), info(방향정보-큐), data(그래프정보-2차원 배열)
 n = int(input())
 k = int(input())
 data = [[0] * (n+1) for _ in range(n+1)]
