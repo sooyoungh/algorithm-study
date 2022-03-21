@@ -48,8 +48,10 @@ def simulate():
     else:
       time += 1
       break
-    x,y = nx, ny
+    
+    # 여기부터는 다음 시간 체크
     time += 1
+    x,y = nx, ny
     if index < l and time == info[index][0]:
       direction = turn(direction, info[index][1])
       index += 1
