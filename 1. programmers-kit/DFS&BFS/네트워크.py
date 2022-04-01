@@ -18,6 +18,28 @@ def solution(n, computers):
             answer += 1
     
     return answer
+
+# 1-1 DFS인데 함수안에 함수 정의해서 매개변수가 아닌 nonlocal 사용
+from collections import deque
+def solution(n, computers):
+    answer = 0
+    visited = [False]*n
+    
+    def dfs(start):
+        nonlocal visited
+        visited[start] = True
+        for i in range(n):
+            if start != i and computers[start][i] == 1:
+                if visited[i] == False:
+                    visited[i] = True
+                    dfs(i)
+        
+    for i in range(n):
+        if visited[i] == False:
+            dfs(i)
+            answer += 1
+            
+    return answer
   
 # 2. BFS
 from collections import deque
@@ -42,4 +64,30 @@ def solution(n, computers):
             bfs(n, i, visited, computers)
             answer += 1
     
+    return answer
+
+# 2-2 BFS인데 nonlocal
+from collections import deque
+def solution(n, computers):
+    answer = 0
+    visited = [False]*n
+    
+    def bfs(start):
+        nonlocal visited
+        q = deque([start])
+        visited[start] = True
+        
+        while q:
+            now = q.popleft()
+            for i in range(n):
+                if now != i  and computers[now][i] == 1:
+                    if visited[i] == False:
+                        visited[i] = True
+                        q.append(i)
+        
+    for i in range(n):
+        if visited[i] == False:
+            bfs(i)
+            answer += 1
+            
     return answer
