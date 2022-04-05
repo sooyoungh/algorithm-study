@@ -43,8 +43,9 @@ def find(dist):
     for i in range(n):
         for j in range(n):
             if dist[i][j] != -1 and 1 <= graph[i][j] < now_size:
-                x, y = i, j
-                min_dist = dist[i][j]
+                if dist[nx][ny] < min_dist:
+                    x, y = i, j
+                    min_dist = dist[i][j]
     if min_dist == INF:
         return None
     else:
