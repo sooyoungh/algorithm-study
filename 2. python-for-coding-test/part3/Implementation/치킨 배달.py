@@ -51,6 +51,7 @@ for case in combinations(chick, m):
 print(result)
 
 # 2. 각 집마다 각각의 치킨집의 거리 구하기 (2차원 배열X)
+# 이 문제는 연결성을 고려할 필요가 없기 때문에 BFS로 할 필요X
 from itertools import combinations
 
 n, m = map(int, input().split())
