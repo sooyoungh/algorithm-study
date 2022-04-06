@@ -40,9 +40,12 @@ q = [(0, x)]
 
 while q:
     dist, node = heapq.heappop(q)
+    if dist > distance[node]:
+      continue
     for next in graph[node]:
-        if distance[next] == -1:
-            heapq.heappush(q, (dist + 1, next))
-            distance[next] = dist + 1
+      new_dist = 1 + distance[node]
+        if new_dist < distance[next]:
+            heapq.heappush(q, (new_dist, next))
+            distance[next] = new_dist
 
 print(distance)
