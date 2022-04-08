@@ -66,8 +66,8 @@ def move_shark():
         flag = True
         nx, ny = now_x, now_y
         for i in direction:
-            nx = nx + dx_shark[i]
-            ny = ny + dy_shark[i]
+            nx += dx_shark[i]
+            ny += dy_shark[i]
             if not (0 <= nx < 4 and 0 <= ny < 4): # 범위 벗어나면 이동 불가
                 flag = False
                 break
