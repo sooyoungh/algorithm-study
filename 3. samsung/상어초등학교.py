@@ -1,9 +1,11 @@
 n = int(input())
 length = n*n
 data = []
+
 for _ in range(length):
     data_input = list(map(int, input().split()))
     data.append(data_input)
+# data = [list(map(int, input().split())) for _ in range(n**2)] 이렇게도 초기화
 
 # 정렬 조건으로 한번에 해결
 # 비어있는 칸 중에서 좋아하는 학생이 인접한 칸에 가장 많은 칸으로 자리를 정한다.
