@@ -7,8 +7,16 @@ def solution(s):
         answer = answer.replace(key, value)
     return int(answer)
 
+# 2. 숫자 -> 배열 활용
+def solution(s):
+    words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 
-# 2. 내풀이
+    for i in range(len(words)):
+        s = s.replace(words[i], str(i))
+
+    return int(s)
+
+# 3.
 def solution(s):
     answer = ""
     length = len(s)
