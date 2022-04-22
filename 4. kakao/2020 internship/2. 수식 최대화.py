@@ -22,8 +22,8 @@ def solution(expression):
     # 2. 연산 우선 순위
     max_result = 0
     for case in permutations(op_sample, 3):  # (+, -, *) 등등
-        num = copy.deepcopy(ori_num)
-        op = copy.deepcopy(ori_op)
+        num = ori_num[:] # num = copy.deepcopy(ori_num)
+        op = ori_op[:] # op = copy.deepcopy(ori_op)
         for tmp_op in case:  # ex. +, -, *
             for i in range(len(op)):
                 if op[i] == tmp_op:
