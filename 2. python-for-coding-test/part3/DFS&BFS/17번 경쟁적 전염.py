@@ -4,7 +4,6 @@ q = []
 n, k = map(int, input().split())
 graph = []
 for i in range(n):
-  # graph[i] = list(map(int, input().split())))
   graph.append(list(map(int, input().split())))
 s, x, y = map(int, input().split())
 
@@ -33,3 +32,40 @@ for _ in range(s):
 
 print(graph[x-1][y-1])
 print(graph)
+
+
+# 2. 힙큐 + BFS
+import heapq
+n, k = map(int, input().split())
+graph = []
+virus = []
+for i in range(n):
+    graph.append(list(map(int, input().split())))
+    for j in range(n):
+        if graph[i][j] != 0:
+            heapq.heappush(virus, (graph[i][j], (i, j)))
+
+s, x, y = map(int, input().split())
+
+dx = [0, 0, 1, -1]
+dy = [1, -1, 0, 0]
+
+def spread(virus):
+    global graph
+    new_virus = []
+    while virus:
+        num, (now_x, now_y) = heapq.heappop(virus)
+        for i in range(4):
+            nx = now_x + dx[i]
+            ny = now_y + dy[i]
+            if 0 <= nx < n and 0 <= ny < n:
+                if graph[nx][ny] == 0:
+                    graph[nx][ny] = num
+                    heapq.heappush(new_virus, (num, (nx, ny)))
+    return new_virus
+
+
+for i in range(s):
+    virus = spread(virus)
+
+print(graph[x-1][y-1])
