@@ -31,7 +31,7 @@ def bfs():
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < n and 0 <= ny < n:
-                if dist[nx][ny] == -1 and graph[nx][ny] < now_size:
+                if dist[nx][ny] == -1 and graph[nx][ny] <= now_size:
                     dist[nx][ny] = dist[x][y] + 1
                     q.append((nx, ny))
     return dist
@@ -101,7 +101,7 @@ def find_fishes():
             nx = x + dx[i]
             ny = y + dy[i]
             if 0 <= nx < n and 0 <= ny < n:
-                if graph[nx][ny] < size:
+                if graph[nx][ny] <= size:
                     if distance[nx][ny] == -1:
                         distance[nx][ny] = dist+1
                         heapq.heappush(q, (dist+1, (nx, ny)))
