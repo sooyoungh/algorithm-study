@@ -30,4 +30,37 @@ def solution(user_id, banned_id):
 
     return len(answer)
     
-# 2. 비트마스크
+# 2. 백트래킹 + 비트마스크
+# 순서 상관 있음
+# depth로 원소 갯수 제한
+
+def solution(user_id, banned_id):
+    answer = []
+    backtracking(0, user_id, banned_id, 0, answer)
+    return len(answer)
+
+
+def backtracking(depth, user_ids, banned_ids, current, ans):
+    if depth == len(banned_ids):
+        if current in ans:
+            return 0
+        ans.append(current)
+        return 1
+
+    res = 0
+    for i in range(len(user_ids)):
+        if current & (1 << i) or not possible(user_ids[i], banned_ids[depth]):
+            continue
+        current |= 1 << i  # 원소 추가
+        res += backtracking(depth + 1, user_ids, banned_ids, current, ans)
+        current ^= 1 << i  # 원소 삭제
+    return res
+
+
+def possible(user_id, banned_id):
+    if len(user_id) != len(banned_id):
+        return False
+    for uid, bid in zip(user_id, banned_id):
+        if bid != '*' and uid != bid:
+            return False
+    return True
