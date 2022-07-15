@@ -1,5 +1,4 @@
-# 참고) 파이썬 매개변수의 주소값
-# dfs(index, arr, n, info)에서 매개변수 arr의 주소값은 모두 같음
+# 참고) 파이썬 매개변수의 주소값 => id(arr)로 체크해보기
 
 # 1) DFS로 풀이
 from copy import deepcopy
@@ -34,9 +33,7 @@ def dfs(index, arr, n, info): # index로 dfs 깊이 제어!
             return
         if max_diff < diff:
             max_diff = diff
-            answer = deepcopy(arr) # 깊은 복사!! 
-            # answer = arr 하면 얕은 복사라서 틀림=> arr의 주소값을 참조하는 것이므로, 마지막 매개변수로 주어진 arr의 실제 인스턴스 값이 나오게 됨
-            # 함수 내에서 매개변수의 주소값이 모두 같음 (id(arr))
+            answer = deepcopy(arr) # 깊은 복사!! id(arr)로 체크해보기
         elif max_diff == diff:  # 가장 낮은 점수를 더 많이 맞힌 경우
             for i in range(10, -1, -1):
                 if arr[i] > answer[i]:
