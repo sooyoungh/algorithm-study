@@ -5,8 +5,6 @@ answer = []
 max_diff = 0
 
 # 점수 차이는 다 끝나고 계산
-
-
 def calcDiff(info, shoot):
     enemyScore, myScore = 0, 0
     for i in range(11):
@@ -26,20 +24,21 @@ def dfs(index, arr, n, info): # index로 dfs 깊이 제어!
     if index == 11:
         if n != 0:  # n이 남아있는 경우 -> 마지막에 다 주기!
             arr[10] = n
+
         diff = calcDiff(info, arr)
-        result = deepcopy(arr)
+
         if diff <= 0:
             return
         if max_diff < diff:
             max_diff = diff
-            answer = result
+            answer = deepcopy(arr) # 깊은 복사!! 
+            # answer = arr 하면 얕은 복사라서 틀림=> arr의 주소값을 참조하는 것이므로, 마지막 매개변수로 주어진 arr의 실제 인스턴스 값이 나오게 됨
         elif max_diff == diff:  # 가장 낮은 점수를 더 많이 맞힌 경우
             for i in range(10, -1, -1):
-                
-                if result[i] > answer[i]:
-                    answer = result
+                if arr[i] > answer[i]:
+                    answer = arr
                     break
-                elif result[i] < answer[i]:
+                elif arr[i] < answer[i]:
                     break
                 else:   # 두 배열의 i의 갯수가 같으면 continue (코드 생략 가능)
                     continue
