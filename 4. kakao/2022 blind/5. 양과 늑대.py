@@ -1,4 +1,77 @@
 # 모든 경로 다 방문 후 max값 찾기
+# 1) DFS - 내풀이
+def solution(info, edges):
+    graph = [[] for _ in range(len(info))]
+    max_sheep = 0
+
+    for par, next in edges:
+        graph[par].append(next)
+
+    def dfs(sheep, wolf, now, path):
+        
+        if info[now]:
+            wolf += 1
+            if sheep <= wolf: # 양 < 늑대인 경우, dfs 탐색 멈춤
+                return -1
+        else:
+            sheep += 1
+
+        max_sheep = sheep
+        
+        # 현재 노드 now
+        for child in graph[now]: # 이미 8번 있는데, 1번의 자식들 (2,4번) 추가
+            path.add(child) # set
+        path.discard(now) # 현재 노드 now 삭제
+        
+        for node in path: # 8번 / 2번 4번
+            new_path = path.copy()
+            new_path.remove(node)
+            max_sheep = max(max_sheep, dfs(sheep, wolf, node, new_path))
+                    
+        return max_sheep
+
+    answer = dfs(0, 0, 0, set([0]))
+
+    return answer
+
+
+
+
+# 2) BFS
+from collections import deque
+
+def solution(info, edges):
+
+    graph = [[] for _ in range(len(info))]
+    max_sheep = 0
+
+    for par, child in edges:
+        graph[par].append(child)
+
+    q = deque([[0, 1, 0, set()]])
+
+    while q:
+        now, sheep, wolf, record = q.popleft()
+        max_sheep = max(max_sheep, sheep)
+        # 현재 노드의 자식 노드들 추가
+        for i in graph[now]:
+            record.add(i)
+
+        for child in record:
+            # child로 이동가능하면 sheep혹은 wolf값 갱신해주고, 
+            # 나머지 갈 수 있는 노드들 record - {child}
+            if info[child]:  # 늑대
+                if sheep != wolf + 1:
+                    q.append([child, sheep, wolf+1, record - {child}])
+            else:  # 양
+                q.append([child, sheep+1, wolf, record - {child}])
+
+    return max_sheep
+
+
+
+
+# --------------------추가---------------------------
 # 1) DFS
 def solution(info, edges):
 
@@ -33,35 +106,3 @@ def solution(info, edges):
     answer = dfs(0, 0, 0, [0])
 
     return answer
-
-
-# 2) BFS
-from collections import deque
-
-def solution(info, edges):
-
-    graph = [[] for _ in range(len(info))]
-    max_sheep = 0
-
-    for par, child in edges:
-        graph[par].append(child)
-
-    q = deque([[0, 1, 0, set()]])
-
-    while q:
-        now, sheep, wolf, record = q.popleft()
-        max_sheep = max(max_sheep, sheep)
-        # 현재 노드의 자식 노드들 추가
-        for i in graph[now]:
-            record.add(i)
-
-        for child in record:
-            # child로 이동가능하면 sheep혹은 wolf값 갱신해주고, 
-            # 나머지 갈 수 있는 노드들 record - {child}
-            if info[child]:  # 늑대
-                if sheep != wolf + 1:
-                    q.append([child, sheep, wolf+1, record - {child}])
-            else:  # 양
-                q.append([child, sheep+1, wolf, record - {child}])
-
-    return max_sheep
