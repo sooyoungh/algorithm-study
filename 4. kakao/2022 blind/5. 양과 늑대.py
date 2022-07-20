@@ -21,11 +21,13 @@ def solution(info, edges):
         # 현재 노드 now
         for child in graph[now]: # 이미 8번 있는데, 1번의 자식들 (2,4번) 추가
             path.add(child) # set
-        path.discard(now) # 현재 노드 now 삭제
+        path.discard(now) # 현재 노드 now 삭제! (여기)
         
         for node in path: # 8번 / 2번 4번
             new_path = path.copy()
-            new_path.remove(node)
+            # new_path.remove(node) 없어도 됨! => dfs 내부에서 현재 시작 노드(now)를 삭제해주기에
+            # 위 방식만으로는 최초의 dfs(0, 0, 0, set([0]))에서 path값 set([0])에서 0노드를 삭제해주지 못하므로
+            # 이 루프 전에 (여기)에서 삭제처리 해주어어야 함
             max_sheep = max(max_sheep, dfs(sheep, wolf, node, new_path))
                     
         return max_sheep
