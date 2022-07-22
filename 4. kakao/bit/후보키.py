@@ -37,31 +37,36 @@ def solution(relation):
 # 2. 비트 마스킹
 # 2-1) 엔티티 구분용 - 튜플로
 def solution(relation):
-    answer = []
     col_n = len(relation[0])
     entity_n = len(relation)
-    
+
     all = list(range(1, 1 << col_n))
-    for case in all: #모든 조합에 대한 검사
-            tmp_set = set()
-            for e in range(entity_n): # entity 마다
-                tmp = []
-                for col in range(col_n): # col 마다
-                    if case & (1<<col):
-                        tmp.append(relation[e][col]) # 엔티티 구분용
-                tmp = tuple(tmp) # set에는 리스트X 대신 str이나 튜플
-                tmp_set.add(tmp)
-            
-                if len(tmp_set) == entity_n:
-                    answer.append(case)
-                    
-    answer_set = set(answer)
-    for i in answer:
-        for j in range(i, len(answer)):
-            if i & answer[j] == i:
-                answer_set.discard(answer[j])
-    
-    return len(answer_set)
+
+    answer = []
+    # 1) 전체 케이스
+    for case in all:
+        # 2) 유일성 검사
+        tmp_set = set()
+        for entity in relation:  # 한 엔티티의 해당 키조합
+            tmp = []
+            for i in range(col_n):
+                if case & (1 << i):
+                    tmp.append(entity[i])
+            tmp = tuple(tmp)
+            tmp_set.add(tmp)
+        
+        # 3) 최소성 검사
+        if len(tmp_set) == entity_n:
+            flag = True
+            for num in answer:
+                if (num & case) == num:
+                    flag = False
+                    break
+            if flag:
+                answer.append(case)
+                
+    return len(answer)
+
 
 # 2-2) 엔티티 구분용 str
 def solution(relation):
