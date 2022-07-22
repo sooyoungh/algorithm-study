@@ -1,43 +1,37 @@
-# 1. 
+# 1. set, 리스트만으로
 from itertools import combinations
 
 
 def solution(relation):
-    answer = 0
-    n = len(relation)
-    col = len(relation[0])
-    
-    # 키의 모든 조합
-    all = set()
-    for i in range(1, n+1):
-        li = list(combinations(range(col), i))
-        all.update(li)
+    col_n = len(relation[0])
+    entity_n = len(relation)
 
-    # 유일성을 만족하는 경우!
-    unique = []
-    for case in all:  # 키조합 => ex.(학번,이름)
-        case_set = set()
-        for entity in relation:  # 모든 엔티티 =>  ex.0번째 엔티티 (100,ryan,music,2)
+    all = []
+    for n in range(1, col_n+1):
+        for tmp in combinations(range(col_n), n):
+            all.append(tmp)
+
+    # 유일성
+    answer = []
+    for case in all:
+        tmp_set = set()
+        for entity in relation:
             tmp = []
-            for k in case:      # 엔티티를 키조합으로 묶기  => ex.(100,ryan)
-                tmp.append(entity[k])
+            for i in case:
+                tmp.append(entity[i])
             tmp = tuple(tmp)
-            case_set.add(tmp)
+            tmp_set.add(tmp) # tmp_set에 중복은 한번만 더해짐
+        if len(tmp_set) == entity_n:
+            answer.append(case)
 
-        if len(case_set) == n:  # 엔티티 유일성 보장 (해당 키조합으로 모든 엔티티 구분)
-            unique.append(case)
-    
-    
-    # 최소성 => (1,2,3)과 (1,2) 있으면 최소만 남기기
-    unique.sort() # 정렬 [(0,), (0, 1), (0, 1, 2), (0, 1, 2, 3), (0, 1, 3), (0, 2), (0, 2, 3), (0, 3), (1, 2), (1, 2, 3)]
-    answer = set(unique) # {(0, 1), (1, 2), (0, 1, 2), (0, 1, 3), (0, 3), (0, 2, 3), (1, 2, 3), (0, 2), (0, 1, 2, 3), (0,)}
-    for i in range(len(unique)):
-        for j in range(i+1, len(unique)):
-            if len(unique[i]) == len(set(unique[i]) & (set(unique[j]))):
-                answer.discard(unique[j])
-    print(answer)
+    # 최소성
+    new_answer = set(answer)
+    for i in range(len(answer)):
+        for j in range(i+1, len(answer)):
+            if len(answer[i]) == len( set(answer[i]) & set(answer[j])):
+                new_answer.discard(answer[j])
 
-    return len(answer)
+    return len(new_answer)
 
 
 # 2. 비트 마스킹
