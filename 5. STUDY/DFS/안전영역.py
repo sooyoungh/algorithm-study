@@ -29,11 +29,11 @@ def dfs(x, y, h, tmp):
                     dfs(nx, ny, h, tmp)
 
 
-result = []
-visited = [[False] * n for _ in range(n)]
+result = 1
+# visited = [[False] * n for _ in range(n)]
 
 for h in range(min_height, max_height):
-    tmp = copy.deepcopy(visited)
+    tmp = [[False] * n for _ in range(n)]  # copy.deepcopy(visited)
     cnt = 0
     for i in range(n):
         for j in range(n):
@@ -41,6 +41,6 @@ for h in range(min_height, max_height):
                 if not tmp[i][j]:
                     cnt += 1
                     dfs(i, j, h, tmp)  # 한 그룹 만들기 시작!
-    result.append(cnt)
+    result = max(result, cnt)
 
-print(max(result))
+print(result)
