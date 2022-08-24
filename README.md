@@ -1,14 +1,18 @@
 # algorithm-study
 
+[5. STUDY](/5.%20STUDY/study.md)
 
 ### 배열 복사하기
+
 - 깊은 복사
+
 ```py
  import copy
  result = copy.deepcopy(data)
 ```
 
 - 얕은 복사 -> 원래 배열도 값이 변경
+
 ```py
 result = data
 # 혹은
@@ -29,7 +33,6 @@ result = [item[:] for item in data]
 ```
 
 [배열 복사하기 - 깊은 복사, 얕은 복사](https://blockdmask.tistory.com/576)
-
 
 - 입력받기
 
@@ -247,7 +250,7 @@ def bfs(x,y):
         graph[nx][ny] = graph[x][y] + 1
         # 다음에 들어갈 노드 큐에 넣기
         q.append((nx,ny))
-        
+
   return graph[n-1][m-1]
 
 print(bfs(0,0))
@@ -371,7 +374,7 @@ for i in range(1, n+1):
     print(distance[i])
 ```
 
-- 다익스트라_힙큐
+- 다익스트라\_힙큐
 
 : 모든 노드(start)에서 모든 노드까지의 최단 거리 + 갱신되면 힙큐에 넣기
 
@@ -401,8 +404,8 @@ def dijkstra(start):
     dist, now = heapq.heappop(q)
     if distance[now] < dist:
       continue
-    for i in graph[now]: # i[0] 도착점, i[1]은 거리 
-      cost = dist + i[1] # 
+    for i in graph[now]: # i[0] 도착점, i[1]은 거리
+      cost = dist + i[1] #
       if cost < distance[i[1]]:
         distance[i[0]] = cost
         heapq.heappush(q, (cost, i[0]))
@@ -487,6 +490,7 @@ print(result)
 - 위상 정렬
 
 한 붓 그리기 → 경로 출력,, 커리큘럼
+
 ```python
 from collections import deque
 
@@ -513,7 +517,7 @@ def topology_sort():
       indegree[i] -= 1
       if indegree[i] == 0:
         q.append(i)
-        
+
   for i in result:
     print(i)
 
