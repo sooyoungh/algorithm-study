@@ -8,6 +8,7 @@ coins = [int(input()) for _ in range(n)]
 dp = [10001] * (k+1)
 dp[0] = 0
 
+# 매 coin마다 dp[tmp - coin]가 최소인지 비교!
 for coin in coins:
     for tmp in range(coin, k+1):
         dp[tmp] = min(dp[tmp], dp[tmp - coin] + 1)
