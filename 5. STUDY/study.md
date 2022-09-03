@@ -72,6 +72,7 @@
 | 이친수 | https://www.acmicpc.net/problem/2193   |  |
 | 이동하기 | https://www.acmicpc.net/problem/11048 |  |  
 | 평범한 배낭 | https://www.acmicpc.net/problem/12865 |  |  
+| 호텔 | [https://www.acmicpc.net/problem/12865](https://www.acmicpc.net/problem/1106) |  |  
 | LCS | https://www.acmicpc.net/problem/9251 |  |  
 | 가장 긴 증가하는 부분 수열 | https://www.acmicpc.net/problem/11053 |  |  
 | 가장 긴 증가하는 부분 수열4 | https://www.acmicpc.net/problem/14002 |  |  
