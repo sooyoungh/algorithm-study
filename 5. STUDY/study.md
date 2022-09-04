@@ -28,7 +28,7 @@
 | 좋은 수열       | https://www.acmicpc.net/problem/2661  | [Python](/5.%20STUDY/BruteForce/%EC%A2%8B%EC%9D%80%EC%88%98%EC%97%B4.py)                            |
 | 연산자 끼워넣기 | https://www.acmicpc.net/problem/14888 | [Python](/5.%20STUDY/BruteForce/%EC%97%B0%EC%82%B0%EC%9E%90%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0.py) |
 | 사다리 조작\*   | https://www.acmicpc.net/problem/15684 |                                                                                                     |
-| 치킨 배달\*     | https://www.acmicpc.net/problem/15686 | [Python](/5.%20STUDY/BruteForce/%EC%B9%98%ED%82%A8%EB%B0%B0%EB%8B%AC.py))                           |
+| 치킨 배달\*     | https://www.acmicpc.net/problem/15686 | [Python](/5.%20STUDY/BruteForce/%EC%B9%98%ED%82%A8%EB%B0%B0%EB%8B%AC.py)                            |
 
 ## 2. BFS
 
