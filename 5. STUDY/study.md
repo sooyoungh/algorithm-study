@@ -82,9 +82,9 @@
 
 | 문제 이름    | 문제 링크                             | 풀이 |
 | ------------ | ------------------------------------- | ---- |
-| 사회망서비스 | https://www.acmicpc.net/problem/2533  |      |
-| 트리와 쿼리  | https://www.acmicpc.net/problem/15681 |      |
-| 우수마을     | https://www.acmicpc.net/problem/1949  |      |
+| 사회망서비스 | https://www.acmicpc.net/problem/2533  |  [Python](/5.%20STUDY/DPTree/%EC%82%AC%ED%9A%8C%EB%A7%9D%EC%84%9C%EB%B9%84%EC%8A%A4.py)    |
+| 트리와 쿼리  | https://www.acmicpc.net/problem/15681 |  [Python](/5.%20STUDY/DPTree/%ED%8A%B8%EB%A6%AC%EC%99%80%EC%BF%BC%EB%A6%AC.py)    |
+| 우수마을     | https://www.acmicpc.net/problem/1949  |  [Python](/5.%20STUDY/DPTree/%EC%9A%B0%EC%88%98%EB%A7%88%EC%9D%84.py)    |
 | 트리나라     | https://www.acmicpc.net/problem/12995 |      |
 
 ## 7. 이분탐색
