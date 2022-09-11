@@ -80,20 +80,20 @@
 
 ## 6. DP 트리
 
-| 문제 이름    | 문제 링크                             | 풀이 |
-| ------------ | ------------------------------------- | ---- |
-| 사회망서비스 | https://www.acmicpc.net/problem/2533  |  [Python](/5.%20STUDY/DPTree/%EC%82%AC%ED%9A%8C%EB%A7%9D%EC%84%9C%EB%B9%84%EC%8A%A4.py)    |
-| 트리와 쿼리  | https://www.acmicpc.net/problem/15681 |  [Python](/5.%20STUDY/DPTree/%ED%8A%B8%EB%A6%AC%EC%99%80%EC%BF%BC%EB%A6%AC.py)    |
-| 우수마을     | https://www.acmicpc.net/problem/1949  |  [Python](/5.%20STUDY/DPTree/%EC%9A%B0%EC%88%98%EB%A7%88%EC%9D%84.py)    |
-| 트리나라     | https://www.acmicpc.net/problem/12995 |      |
+| 문제 이름    | 문제 링크                             | 풀이                                                                                   |
+| ------------ | ------------------------------------- | -------------------------------------------------------------------------------------- |
+| 사회망서비스 | https://www.acmicpc.net/problem/2533  | [Python](/5.%20STUDY/DPTree/%EC%82%AC%ED%9A%8C%EB%A7%9D%EC%84%9C%EB%B9%84%EC%8A%A4.py) |
+| 트리와 쿼리  | https://www.acmicpc.net/problem/15681 | [Python](/5.%20STUDY/DPTree/%ED%8A%B8%EB%A6%AC%EC%99%80%EC%BF%BC%EB%A6%AC.py)          |
+| 우수마을     | https://www.acmicpc.net/problem/1949  | [Python](/5.%20STUDY/DPTree/%EC%9A%B0%EC%88%98%EB%A7%88%EC%9D%84.py)                   |
+| 트리나라     | https://www.acmicpc.net/problem/12995 |                                                                                        |
 
 ## 7. 이분탐색
 
-| 문제 이름 | 문제 링크                             | 풀이 |
-| --------- | ------------------------------------- | ---- |
-| 숫자카드  | https://www.acmicpc.net/problem/10815 |      |
-| 피자굽기  | https://www.acmicpc.net/problem/1756  |      |
-| 중량제한  | https://www.acmicpc.net/problem/1949  |      |
+| 문제 이름 | 문제 링크                             | 풀이                                                                       |
+| --------- | ------------------------------------- | -------------------------------------------------------------------------- |
+| 숫자카드  | https://www.acmicpc.net/problem/10815 | [Python](/5.%20STUDY/BinarySearch/%EC%88%AB%EC%9E%90%EC%B9%B4%EB%93%9C.py) |
+| 피자굽기  | https://www.acmicpc.net/problem/1756  | [Python](/5.%20STUDY/BinarySearch/%ED%94%BC%EC%9E%90%EA%B5%BD%EA%B8%B0.py) |
+| 중량제한  | https://www.acmicpc.net/problem/1939  | [Python](/5.%20STUDY/BinarySearch/%EC%A4%91%EB%9F%89%EC%A0%9C%ED%95%9C.py) |
 
 ## 8. 다익스트라
 
