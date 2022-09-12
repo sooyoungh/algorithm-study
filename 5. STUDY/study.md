@@ -97,11 +97,11 @@
 
 ## 8. 다익스트라
 
-| 문제 이름        | 문제 링크                             | 풀이 |
-| ---------------- | ------------------------------------- | ---- |
-| 최단 경로        | https://www.acmicpc.net/problem/1753  |      |
-| 특정한 최단 경로 | https://www.acmicpc.net/problem/1504  |      |
-| 달빛 여우        | https://www.acmicpc.net/problem/16118 |      |
+| 문제 이름        | 문제 링크                             | 풀이                                                                                              |
+| ---------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 최단 경로        | https://www.acmicpc.net/problem/1753  | [Python](/5.%20STUDY/Dijkstra/%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C.py)                            |
+| 특정한 최단 경로 | https://www.acmicpc.net/problem/1504  | [Python](/5.%20STUDY/Dijkstra/%ED%8A%B9%EC%A0%95%ED%95%9C%EC%B5%9C%EB%8B%A8%EA%B2%BD%EB%A1%9C.py) |
+| 달빛 여우        | https://www.acmicpc.net/problem/16118 |                                                                                                   |
 
 ## 9. 플로이드 와샬
 
