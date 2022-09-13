@@ -107,15 +107,15 @@
 
 | 문제 이름 | 문제 링크                             | 풀이 |
 | --------- | ------------------------------------- | ---- |
-| 플로이드  | https://www.acmicpc.net/problem/11404 |      |
-| 키 순서   | https://www.acmicpc.net/problem/2458  |      |
+| 플로이드  | https://www.acmicpc.net/problem/11404 | [Python](/5.%20STUDY/FloydWarshall/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C.py)      |
+| 키 순서   | https://www.acmicpc.net/problem/2458  | [Python](/5.%20STUDY/FloydWarshall/%ED%82%A4%EC%88%9C%EC%84%9C.py)     |
 
 ## 10. 위상정렬
 
 | 문제 이름   | 문제 링크                            | 풀이 |
 | ----------- | ------------------------------------ | ---- |
-| 줄세우기    | https://www.acmicpc.net/problem/2252 |      |
-| 게임개발    | https://www.acmicpc.net/problem/1516 |      |
+| 줄세우기    | https://www.acmicpc.net/problem/2252 | [Python](/5.%20STUDY/TopologicalSort/%EC%A4%84%EC%84%B8%EC%9A%B0%EA%B8%B0.py)    |
+| 게임개발    | https://www.acmicpc.net/problem/1516 | [Python](/5.%20STUDY/TopologicalSort/%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C.py)     |
 | 최종순위    | https://www.acmicpc.net/problem/3665 |      |
 | 장난감 조립 | https://www.acmicpc.net/problem/2637 |      |
 
