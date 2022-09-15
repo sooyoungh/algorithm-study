@@ -37,12 +37,12 @@
 ### 2021 kakao tech internship
 
 | 문제                                                                                    | 문제 유형 | 풀이                                                                                                                                    |
-| --------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| --------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | [숫자 문자열과 영단어](https://school.programmers.co.kr/learn/courses/30/lessons/81301) |           | [Python](/4.%20kakao/2021%20internship/1.%20%EC%88%AB%EC%9E%90%20%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%20%EC%98%81%EB%8B%A8%EC%96%B4.py) |
 | [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302)    |           | [Python](/4.%20kakao/2021%20internship/%EC%88%AB%EC%9E%90%20%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%20%EC%98%81%EB%8B%A8%EC%96%B4.py)      |
 | [표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303)              |           |                                                                                                                                         |
 | [미로 탈출](https://school.programmers.co.kr/learn/courses/30/lessons/81304)            |           |                                                                                                                                         |
-| [시험장 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/81305)        |           |                                                                                                                                         |     |
+| [시험장 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/81305)        |           |                                                                                                                                         |
 
 ### 2021 kakao blind recruitment
 
