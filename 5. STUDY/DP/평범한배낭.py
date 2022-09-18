@@ -21,8 +21,6 @@ input = sys.stdin.readline
 
 n, k = map(int, input().split())
 data = [[0, 0]] + [list(map(int, input().split())) for _ in range(n)]
-for i in range(n):
-    data.append(list(map(int, input().split())))
 
 dp = [[0]*(k+1) for _ in range(n+1)]
 
