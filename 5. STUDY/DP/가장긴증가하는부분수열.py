@@ -14,4 +14,26 @@ for i in range(n):  # i일때
 
 print(max(dp))
 
-# 2) 이분 탐색 !!
+# 2) 이분 탐색
+input = sys.stdin.readline
+
+n = int(input())
+data = list(map(int, input().split()))
+answer = [0]  # 증가 수열
+
+for case in data:
+    if answer[-1] < case:  # 증가하면 증가수열에 추가
+        answer.append(case)
+    else:  # 아니면 위치 체크
+        left = 0
+        right = len(answer)
+
+        while left < right:
+            mid = (right+left)//2
+            if answer[mid] < case:
+                left = mid+1
+            else:
+                right = mid
+        answer[right] = case
+
+print(len(answer)-1)
