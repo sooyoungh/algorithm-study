@@ -16,9 +16,9 @@
 
 | 문제                                                                                     | 문제 유형 | 풀이 |
 | ---------------------------------------------------------------------------------------- | --------- | ---- |
-| [성격 유형 검사하기](https://school.programmers.co.kr/learn/courses/30/lessons/118666)   |           |      |
-| [두 큐 합 같게 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667) |           |      |
-| [등산코스 정하기](https://school.programmers.co.kr/learn/courses/30/lessons/118669)      |           |      |
+| [성격 유형 검사하기](https://school.programmers.co.kr/learn/courses/30/lessons/118666)   |           | [Python](/4.%20kakao/2022%20internship/1.%20%EC%84%B1%EA%B2%A9%20%EC%9C%A0%ED%98%95%20%EA%B2%80%EC%82%AC%ED%95%98%EA%B8%B0.py)     |
+| [두 큐 합 같게 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667) |           | [Python](/4.%20kakao/2022%20internship/2.%20%EB%91%90%20%ED%81%90%20%ED%95%A9%20%EA%B0%99%EA%B2%8C%20%EB%A7%8C%EB%93%A4%EA%B8%B0.py)     |
+| [등산코스 정하기](https://school.programmers.co.kr/learn/courses/30/lessons/118669)      |           | [Python](/4.%20kakao/2022%20internship/3.%20%EB%93%B1%EC%82%B0%EC%BD%94%EC%8A%A4%20%EC%A0%95%ED%95%98%EA%B8%B0.py)     |
 | [코딩 테스트 공부](https://school.programmers.co.kr/learn/courses/30/lessons/118668)     |           |      |
 | [행렬과 연산](https://school.programmers.co.kr/learn/courses/30/lessons/118670)          |           |      |
 
