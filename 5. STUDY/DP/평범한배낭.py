@@ -10,9 +10,7 @@ d = [0 for _ in range(k+1)]
 
 for weight, value in data:
     for tmp in range(weight, k+1):  # 최대 k무게에서 1씩 줄이면서 weight까지
-        if tmp >= weight:
             d[tmp] = max(d[tmp], value + d[tmp-weight])
-    print(d)
 
 print(d[-1])
 
