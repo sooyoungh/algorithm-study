@@ -12,7 +12,6 @@ dp = [1] + [0]*k
 # 누적으로 경우의 수 더해주기
 for coin in coins:
     for tmp in range(coin, k+1):
-        if tmp >= coin:
-            dp[tmp] += dp[tmp - coin]
+        dp[tmp] += dp[tmp - coin]
 
 print(dp[k])
