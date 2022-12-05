@@ -1,4 +1,6 @@
 # 모든 경로 다 방문 후 max값 찾기
+
+[https://ginny.tistory.com/37](https://ginny.tistory.com/37)
 # 1) DFS - 내풀이
 def solution(info, edges):
     graph = [[] for _ in range(len(info))]
