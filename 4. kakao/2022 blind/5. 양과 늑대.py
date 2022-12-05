@@ -8,13 +8,13 @@ def solution(info, edges):
         graph[par].append(next)
 
     def dfs(sheep, wolf, now, path):
-        
-        if info[now]:
+ 
+       if info[now] == 0:  # 양
+            sheep += 1
+        else:  # 늑대
             wolf += 1
             if sheep <= wolf: # 양 < 늑대인 경우, dfs 탐색 멈춤
                 return -1
-        else:
-            sheep += 1
 
         max_sheep = sheep
         
