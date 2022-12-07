@@ -5,3 +5,4 @@
 3. [삼성 기출](/3.%20samsung)
 4. [카카오 기출](/4.%20kakao/kakao.md)
 5. [STUDY](/5.%20STUDY/study.md)
+6. [solved.ac](/6.%20solved.ac/)
