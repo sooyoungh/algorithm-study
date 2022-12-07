@@ -1,4 +1,6 @@
 # 모든 경로 다 방문 후 max값 찾기
+# 풀이 그림 : https://ginny.tistory.com/37
+
 # 1) DFS - 내풀이
 def solution(info, edges):
     graph = [[] for _ in range(len(info))]
@@ -8,13 +10,13 @@ def solution(info, edges):
         graph[par].append(next)
 
     def dfs(sheep, wolf, now, path):
-        
-        if info[now]:
+ 
+       if info[now] == 0:  # 양
+            sheep += 1
+        else:  # 늑대
             wolf += 1
             if sheep <= wolf: # 양 < 늑대인 경우, dfs 탐색 멈춤
                 return -1
-        else:
-            sheep += 1
 
         max_sheep = sheep
         
