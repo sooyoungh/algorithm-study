@@ -1,34 +1,32 @@
 # 1) BFS
-# from collections import deque
-# import sys
-# input = sys.stdin.readline
-
-# n = int(input())
-# link = int(input())
-# graph = [[] for _ in range(n+1)]
-# for _ in range(link):
-#     a, b = map(int, input().split())
-#     graph[a].append(b)
-#     graph[b].append(a)
-
-# visited = []
-# q = deque()
-# q.append(1)
-# while q:
-#     now = q.popleft()
-#     if now in visited:
-#         continue
-#     visited.append(now)
-
-#     for next in graph[now]:
-#         if not next in visited:
-#             q.append(next)
-
-# print(len(visited) - 1)
-
-# 2) DFS
 from collections import deque
 import sys
+input = sys.stdin.readline
+
+n = int(input())
+link = int(input())
+graph = [[] for _ in range(n+1)]
+for _ in range(link):
+    a, b = map(int, input().split())
+    graph[a].append(b)
+    graph[b].append(a)
+
+visited = []
+q = deque()
+q.append(1)
+while q:
+    now = q.popleft()
+    if now in visited:
+        continue
+    visited.append(now)
+
+    for next in graph[now]:
+        if not next in visited:
+            q.append(next)
+
+print(len(visited) - 1)
+
+# 2) DFS
 input = sys.stdin.readline
 
 n = int(input())
